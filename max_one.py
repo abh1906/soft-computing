@@ -59,7 +59,7 @@ mut_array=[]
 for i in range(50):
   k=random.randint(0,2**32-1)
   n=decToBin(k)
-  q=7-len(n)
+  q=32-len(n)
   s=''
   for i in range(q):
        s=s+'0'
