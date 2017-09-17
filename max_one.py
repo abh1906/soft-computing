@@ -12,13 +12,13 @@ def mutate(array,n):
   return array
      
 def crossover(a,b,k,array):
-   aa=list(a)
-   bb=list(b)
+   aa=list(array[a])
+   bb=list(array[b])
    
    for i in range(k):
       aa[i], bb[i]=bb[i], aa[i]
-      a=''.join(aa)
-      b=''.join(bb)
+   array[a]=''.join(aa)
+   array[b]=''.join(bb)
    return array
 def cal_fitness(a):
   s=a.count('1')
@@ -82,7 +82,7 @@ for i in range(30):
     
     cross_over=random_array[10:50]
     for k in range(0,len(cross_over)-1,2):
-     cross_over=crossover(cross_over[k],cross_over[k+1],3,cross_over)
+     cross_over=crossover(k,k+1,3,cross_over)
     mut_array=mutate(mut_array,len(mut_array))
     
     random_array=[]
