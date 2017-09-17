@@ -81,16 +81,8 @@ for i in range(30):
     mut_array=random_array[5:10]
     
     cross_over=random_array[10:50]
-<<<<<<< HEAD
     for k in range(0,len(cross_over)-1,2):
      cross_over=crossover(k,k+1,3,cross_over)
-||||||| merged common ancestors
-    for k in range(len(cross_over)-1):
-     cross_over=crossover(cross_over[k],cross_over[k+1],3,cross_over)
-=======
-    for k in range(0,len(cross_over)-1,2):
-     cross_over=crossover(cross_over[k],cross_over[k+1],3,cross_over)
->>>>>>> 31a47cff2f09c1b87057805c437c1929138c50c7
     mut_array=mutate(mut_array,len(mut_array))
     
     random_array=[]
