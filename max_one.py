@@ -1,6 +1,6 @@
 import random
 def mutate(array,n):
-  k=random.randint(0,20)
+  k=random.randint(0,31)
   
   for i in range(n):
      a=list(array[i])
@@ -81,7 +81,7 @@ for i in range(30):
     mut_array=random_array[5:10]
     
     cross_over=random_array[10:50]
-    for k in range(len(cross_over)-1):
+    for k in range(0,len(cross_over)-1,2):
      cross_over=crossover(cross_over[k],cross_over[k+1],3,cross_over)
     mut_array=mutate(mut_array,len(mut_array))
     
