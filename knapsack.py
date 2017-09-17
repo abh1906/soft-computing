@@ -62,16 +62,16 @@ def cal_fitness(a,benefit):
 
 def cross_over(a,b,k,array):
   
-   aa=list(a)
-   bb=list(b)
+   aa=list(array[a])
+   bb=list(array[b])
    
    for i in range(k):
       aa[i], bb[i]=bb[i], aa[i]
-      ap=''.join(aa)
-      aq=''.join(bb)
-      if(cal_weight(a,weight)==True and cal_weight(b,weight)==True):
-        a=ap
-        b=aq
+   ap=''.join(aa)
+   aq=''.join(bb)
+      if(cal_weight(ap,weight)==True and cal_weight(aq,weight)==True):
+        array[a]=ap
+        array[b]=aq
    return array
 
 def fit_sort(array):
@@ -110,8 +110,8 @@ for i in range(10):
   
   crossover=random_array[2:10]
   mut_array=mutate(mut_array,len(mut_array))
-  for k in range(len(crossover)-1):
-     crossover=cross_over(crossover[k],crossover[k+1],3,crossover)
+  for k in range(0,len(crossover)-1,2):
+     crossover=cross_over(k,k+1,3,crossover)
   random_array=mut_array+crossover   
   random_array=fit_sort(random_array)
 print()
